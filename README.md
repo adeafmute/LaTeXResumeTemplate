@@ -6,8 +6,10 @@ Includes sections for a personal summary, education, clearance/certifications, w
 See what it looks like as a pdf here:
 https://github.com/paulh2019/LaTeXResumeTemplate/blob/main/Resume_Template.pdf
 
-If you don't know how to edit LaTex or turn it into a PDF, I recommend Overleaf, an online LaTeX editor:
+If you don't know how to edit LaTeX or turn it into a PDF, I recommend Overleaf, an online LaTeX editor:
 https://www.overleaf.com/
+
+I personally use the Texmaker LaTeX editor: https://www.xm1math.net/texmaker/
 
 Tex Checklist:
 1. Change personal details
