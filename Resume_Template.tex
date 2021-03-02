@@ -41,7 +41,9 @@
 % Item Commands:
 % - \shortitem{title}{year}{description}
 % - \longitem{title}{year}{description}  
-% - \indentedSubitem{title}{year}{description}
+% - \mainSubitem{title}{year}{description}
+% - \bulletSubitem{description}
+% - \indentSubitem{description}
 \newcommand{\shortitem}[3]{
   \def\temp{#3}\ifx\temp\empty
   \textbf{#1}
@@ -56,7 +58,7 @@
     #3
     \\[2pt]\end{adjustwidth}}
     
-\newcommand{\indentedSubitem}[3]{
+\newcommand{\mainSubitem}[3]{
   \def\temp{#3}\ifx\temp\empty
   \textbf{#1}
   \else
@@ -64,72 +66,82 @@
   \fi
   \hfill #2\\[2pt]}
 
+\newcommand{\bulletSubitem}[1]{\hspace{0.125cm}\sbt #1\\[2pt]}
+\newcommand{\indentSubitem}[1]{\hspace{0.3cm} #1\\[2pt]}
+
 % bullet points smaller than \bullet and larger than \cdot
 % http://www.latex-community.org/forum/viewtopic.php?f=46&t=10936
 \newcommand{\sbt}[0]{\,\begin{picture}(-1,1)(-1,-3)\circle*{3}\end{picture} \ }
+
+% Remove section numbering
+% http://www.latex-community.org/forum/viewtopic.php?f=44&p=55866
 
 % ------------------------------------------------------------------------------------
 
 % Variables for your personal information
 \newcommand{\myFullName}	{First Middle Last}
-\newcommand{\myEmail}		{email@email.com}
+\newcommand{\myEmail}		{email.email@email.com}
 \newcommand{\myCityState}	{City, State}
 \newcommand{\myPhone}		{(000) 000 -- 0000}
 
-% Remove section numbering
-% http://www.latex-community.org/forum/viewtopic.php?f=44&p=55866
-
 \section*{\hfill\LARGE \myFullName \hfill}
-\myEmail \hfill \myCityState \hfill \myPhone
+% Change the values in the hspace brackets to center the "City, State" under your name
+\myEmail \hspace*{4cm} \myCityState \hspace*{5cm} \myPhone
 
 \section*{SUMMARY}
-Dynamic Current Job Title with a strong passion for cybersecurity. Demonstrated experience with lots of things including thing1, thing2, thing3, and thing4. Aspiring to work in a highly technical and challenging (what I want to do) environment. This section is roughly 3 lines long.
+% Summary should be short, probably 3 lines max
+--\\--\\--\\
 
 \setlength\parindent{0pt}
-\section*{EDUCATION}
-\shortitem{MS (Major)}{Graduating XXXX}{In Progress}
-	\indentedSubitem{}{XXXX-Present}{\space\space Super Special University}
 
-\shortitem{BS (Major)}{}{}
-	\indentedSubitem{}{XXXX-XXXX}{\space\space Super Duper University}
+% If you are early in your career and went to college, education should be towards the top
+\section*{EDUCATION}
+\shortitem{BS/BA \_\_\_\_\_\_\_\_}{}{}
+	\mainSubitem{}{YYYY-YYYY}{\space\space \_\_\_\_\_\_\_\_ University / College}
 
 % If you don't have a clearance, this can just be the certification section
-\section*{CLEARANCE \& CERTIFICATIONS}
+\section*{CERTIFICATIONS}% \& CLEARANCE}
 % If you have a clearance, put the MM/YYYY of your investigation date
-\shortitem{Active XXXXX Security Clearance}{XX/XXXX}{}
-\shortitem{Offensive Security Certified Professional (OSCP)}{XX/XXXX}{}
+%\shortitem{Active XXXXX Security Clearance}{MM/YYYY}{}
+\shortitem{Certification \#1}{YYYY}{}
+\shortitem{Certification \#2}{YYYY}{}
 
 \section*{PROFESSIONAL EXPERIENCE}
-\shortitem{Super Special Position - Super Special Corporation}{XXXX-Present}{}
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}			
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}	
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}	
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}	
+\shortitem{Position -- Company}{YYYY-Present}{}
+	\bulletSubitem{--}			
+	\indentSubitem{--}	
+	\bulletSubitem{--}	
+	\indentSubitem{--}
+	\bulletSubitem{--}
+	\indentSubitem{--}
+	\bulletSubitem{--}
+	\indentSubitem{--}	
+	\bulletSubitem{--}
+	\indentSubitem{--}
 
 \medskip
 
-\shortitem{Slightly Older Position - Company}{XXXX}{}
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}
-
-\medskip
-
-\shortitem{Even Older Position - Company}{XXXX}{}
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}	
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}
-	\indentedSubitem{}{}{\sbt Description description description description description description description description}
+\shortitem{Position -- Company}{YYYY-YYYY}{}
+	\bulletSubitem{--}
+	\indentSubitem{--}
+	\bulletSubitem{--}
+	\indentSubitem{--}
+	\bulletSubitem{--}
+	\bulletSubitem{--}
 
 \section*{RELATED EXPERIENCE}
-\shortitem{Hack The Box Penetration Testing Labs}{XXXX-Present}{XX+ Systems compromised}
-\shortitem{Some Other Accomplishment}{XXXX}{Did a Thing}
+\shortitem{--}{YYYY-Present}{}
+\shortitem{--}{YYYY-YYYY}{}
+
+% If formal education is not a big part of your career, you can put it towards the end.
+%\section*{EDUCATION}
+%\shortitem{High School Diploma}{}{}
+%	\mainSubitem{}{YYYY}{\space\space \_\_\_\_ High School}
 
 \section*{SKILLS \& TECHNOLOGIES}
-\shortitem{Languages}{}{Blah, Blah, Blah, Blah}
-\shortitem{Programs}{}{Blah, Blah, Blah, Blah}
-\shortitem{Web Technologies}{}{Blah, Blah, Blah, Blah}
-\shortitem{Operating Systems}{}{Blah, Blah}
-\shortitem{Other}{}{Blah, Blah, Blah}
+\shortitem{Languages}{}{A, B, and C}
+\shortitem{Programs}{}{W, X, Y, and Z}
+\shortitem{Other}{}{Soft/people skills}
 
 \setlength\parindent{0pt}
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.8pt}}
