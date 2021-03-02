@@ -12,24 +12,24 @@ https://www.overleaf.com/
 Tex Checklist:
 1. Change personal details
 
-  a. \myFullName
+    a. \myFullName
   
-  b. \myEmail
+    b. \myEmail
   
-  c. \myCityState
+    c. \myCityState
   
-  d. \myPhone
+    d. \myPhone
   
 2. Update both \hspace*{} in the header so that your location is centered under your name
 
 3. Fill out remaining sections using the following items:
 
-  a. \shortitem{title}{year}{description}
+    a. \shortitem{title}{year}{description}
   
-  b. \longitem{title}{year}{description}  
+    b. \longitem{title}{year}{description}  
   
-  c. \mainSubitem{title}{year}{description}
+    c. \mainSubitem{title}{year}{description}
   
-  d. \bulletSubitem{description}
+    d. \bulletSubitem{description}
   
-  e. \indentSubitem{description}
+    e. \indentSubitem{description}
